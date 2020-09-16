@@ -1,20 +1,9 @@
-*{
-    margin: 0;
-}
-.main{
-    text-align: center;
-}
-
-h1{
-    background: red;
-    padding-top:30px;
-    padding-bottom: 30px;
-    margin: 30px;
-    border: solid;
-    border-width: 5px;
-}
-p{
+.block{
     background: blue;
-    padding: 30px 60px;
     color: white;
+}
+.inline{
+    background: red;
+    color: white;
+    display: block;
 }
