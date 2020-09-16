@@ -1,9 +1,13 @@
-.block{
-    background: blue;
-    color: white;
+body {
+  text-align: center;
 }
-.inline{
-    background: red;
-    color: white;
-    display: block;
+.block {
+  background: blue;
+  color: white;
+  width: 150px;
+  margin: 0 auto;
+}
+.inline {
+  background: red;
+  color: white;
 }
