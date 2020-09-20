@@ -1091,6 +1091,7 @@ a {
 }
 .w3-jumbo {
   font-size: 64px !important;
+  text-align: center;
 }
 .w3-left-align {
   text-align: left !important;
