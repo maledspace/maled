@@ -336,7 +336,7 @@ a {
 }
 .w3-ul {
   list-style-type: none;
-  padding: 0;
+  padding: 20px;
   margin: 0;
 }
 .w3-ul li {
@@ -797,6 +797,9 @@ a {
   top: 0;
 }
 .w3-display-topright {
+  font-family: Raleway, sans-serif;
+  text-decoration: none;
+  font-size: 1rem;
   position: absolute;
   right: 0;
   top: 0;
@@ -1599,4 +1602,12 @@ a {
 .w3-border-pale-blue,
 .w3-hover-border-pale-blue:hover {
   border-color: #e7ffff !important;
+}
+.test {
+  list-style: none;
+  margin: 0;
+  display: flex;
+}
+li {
+  padding: 20px;
 }
