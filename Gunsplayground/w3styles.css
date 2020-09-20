@@ -950,7 +950,7 @@ a {
   }
 }
 .w3-animate-opacity {
-  animation: opac 2s;
+  animation: opac 1.6s;
 }
 @keyframes opac {
   from {
