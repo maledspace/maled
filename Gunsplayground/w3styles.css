@@ -791,6 +791,7 @@ a {
   z-index: 2;
 }
 .w3-display-topleft {
+  font-family: Raleway, sans-serif;
   position: absolute;
   left: 0;
   top: 0;
