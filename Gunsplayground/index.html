@@ -30,20 +30,46 @@
       background-size: cover;
     }
   </style>
-
+  <script>
+    function myFunction(x) {
+      x.classList.toggle("change");
+    }
+  </script>
   <body>
     <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
       <!-- logo -->
-      <div class="w3-display-topleft w3-padding-large w3-xlarge">Maled.co</div>
+      <!-- <div class="w3-display-topleft w3-padding-large w3-xlarge">Maled.co</div> -->
       <!-- navigation bar -->
-      <div class="w3-display-topright">
+      <!-- <div class="w3-display-topright">
         <ul class="test">
           <li><a href="#">Home</a></li>
           <li><a href="#">News</a></li>
           <li><a href="#">Contact</a></li>
           <li><a href="#">About</a></li>
         </ul>
+      </div> -->
+      <!-- navbar hamburger -->
+      <!-- <div class="container" onclick="myFunction(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div> -->
+
+      <div id="wrapper">
+        <div class="circle icon">
+          <span class="line top"></span>
+          <span class="line middle"></span>
+          <span class="line bottom"></span>
+        </div>
       </div>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+      <script type="text/javascript">
+        $("#wrapper").click(function () {
+          $(".icon").toggleClass("close");
+        });
+      </script>
       <!-- openning content -->
       <div class="w3-display-middle">
         <h1 class="w3-jumbo w3-animate-top">พบกับเมล็ดเร็วๆนี้</h1>
