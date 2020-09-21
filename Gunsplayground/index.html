@@ -13,6 +13,7 @@
     href="https://fonts.googleapis.com/css2?family=Prompt:wght@200;500&display=swap')"
   />
   <style>
+    @import url("https://fonts.googleapis.com/css?family=Raleway");
     body,
     h1 {
       font-family: "prompt", sans-serif;
@@ -30,32 +31,17 @@
       background-size: cover;
     }
   </style>
-  <script>
+  <!-- <script>
     function myFunction(x) {
       x.classList.toggle("change");
     }
-  </script>
+  </script> -->
   <body>
     <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
       <!-- logo -->
-      <!-- <div class="w3-display-topleft w3-padding-large w3-xlarge">Maled.co</div> -->
-      <!-- navigation bar -->
-      <!-- <div class="w3-display-topright">
-        <ul class="test">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">News</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-      </div> -->
-      <!-- navbar hamburger -->
-      <!-- <div class="container" onclick="myFunction(this)">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </div> -->
+      <div class="w3-display-topleft w3-padding-large w3-xlarge">Maled.co</div>
 
-      <div id="wrapper">
+      <!-- <div id="wrapper">
         <div class="circle icon">
           <span class="line top"></span>
           <span class="line middle"></span>
@@ -69,7 +55,7 @@
         $("#wrapper").click(function () {
           $(".icon").toggleClass("close");
         });
-      </script>
+      </script> -->
       <!-- openning content -->
       <div class="w3-display-middle">
         <h1 class="w3-jumbo w3-animate-top">พบกับเมล็ดเร็วๆนี้</h1>
@@ -77,5 +63,42 @@
         <p class="w3-large w3-center">พื้นที่เชื่อมต่ออุตสาหกรรมการเกษตร</p>
       </div>
     </div>
+    <!-- hamburger -->
+    <nav role="navigation">
+      <div id="menuToggle">
+        <!--
+        A fake / hidden checkbox is used as click reciever,
+        so you can use the :checked selector on it.
+        -->
+        <input type="checkbox" />
+
+        <!--
+        Some spans to act as a hamburger.
+        
+        They are acting like a real hamburger,
+        not that McDonalds stuff.
+        -->
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <!--
+        Too bad the menu has to be inside of the button
+        but hey, it's pure CSS magic.
+        -->
+        <ul id="menu">
+          <a href="#">
+            <li>Home</li>
+          </a>
+          <a href="#">
+            <li>About</li>
+          </a>
+
+          <a href="#">
+            <li>Contact</li>
+          </a>
+        </ul>
+      </div>
+    </nav>
   </body>
 </html>
