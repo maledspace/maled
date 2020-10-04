@@ -47,7 +47,7 @@
   </style>
   <script>
     function initMap() {
-      const chicago = new google.maps.LatLng(41.85, -87.65);
+      const chicago = new google.maps.LatLng(13.736717, 100.523186);
       const map = new google.maps.Map(document.getElementById("map"), {
         center: chicago,
         zoom: 3,
@@ -79,7 +79,7 @@
         Math.floor((worldCoordinate.y * scale) / TILE_SIZE)
       );
       return [
-        "Chicago, IL",
+        "Thailand, BKK",
         "LatLng: " + latLng,
         "Zoom level: " + zoom,
         "World Coordinate: " + worldCoordinate,
