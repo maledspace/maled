@@ -11,10 +11,27 @@
 .column1 {
   flex: 45%;
   padding: 7%;
+  background-color: hsl(131, 52%, 96%);
 }
 .column2 {
   flex: 55%;
   padding: 7%;
+}
+#userpicture {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.header {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 3%;
+}
+.ChartHeader {
+  margin-top: 10%;
 }
 canvas {
   -moz-user-select: none;
