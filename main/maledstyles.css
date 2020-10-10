@@ -11,7 +11,7 @@
 .column1 {
   flex: 45%;
   padding: 7%;
-  background-color: hsl(131, 52%, 96%);
+  background-color: hsl(0, 0%, 96%);
 }
 .column2 {
   flex: 55%;
