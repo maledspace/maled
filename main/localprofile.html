@@ -2,45 +2,42 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- maledstyles.css -->
     <link rel="stylesheet" href="maledstyles.css" />
-    </style>
-    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <style>
+      @import url("https://fonts.googleapis.com/css?family=Raleway");
+    </style> -->
+    <title>locals/profile</title>
     <script src="Chart.min.js"></script>
     <script src="utils.js"></script>
   </head>
   <body>
- <!-- product and revenue graph start-->
-    <div style="width: 70%; height: 50%;">
-      <canvas id="canvas"></canvas>
-    </div>
-    <br />
-    <br />
-    <button id="randomizeData">Randomize Data</button>
-    <button id="addDataset">Add Dataset</button>
-    <button id="removeDataset">Remove Dataset</button>
-    <button id="addData">Add Data</button>
-    <button id="removeData">Remove Data</button>
-    <script>
-      var MONTHS = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
-      ];
-      var config = {
-        type: "line",
-        data: {
-          labels: [
+    <div class="row">
+      <div class="column" style="background-color: rgb(231, 231, 231)">
+        <h2>Username</h2>
+        <p style="font-weight: 400; margin-top: -3%">Rainbow farm</p>
+        <br />
+        <p style="font-weight: 800">Product and Revenue</p>
+        <!-- product and revenue graph start-->
+        <div style="width: 100%">
+          <canvas id="canvas"></canvas>
+        </div>
+        <br />
+        <br />
+        <div class="buttoncontainer">
+          <button id="randomizeData">Randomize Data</button>
+          <button id="addDataset">Add Dataset</button>
+          <button id="removeDataset">Remove Dataset</button>
+          <button id="addData">Add Data</button>
+          <button id="removeData">Remove Data</button>
+        </div>
+        <script>
+          var MONTHS = [
             "January",
             "February",
             "March",
@@ -50,153 +47,176 @@
             "July",
             "August",
             "September",
-          ],
-          datasets: [
-            {
-              label: "Product",
-              backgroundColor: window.chartColors.blue,
-              borderColor: window.chartColors.blue,
-              data: [
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
+            "October",
+            "November",
+            "December",
+          ];
+          var config = {
+            type: "line",
+            data: {
+              labels: [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
               ],
-              fill: false,
-            },
-            {
-              label: "Revenue",
-              fill: false,
-              backgroundColor: window.chartColors.green,
-              borderColor: window.chartColors.green,
-              data: [
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
+              datasets: [
+                {
+                  label: "Product",
+                  backgroundColor: window.chartColors.blue,
+                  borderColor: window.chartColors.blue,
+                  data: [
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                  ],
+                  fill: false,
+                },
+                {
+                  label: "Revenue",
+                  fill: false,
+                  backgroundColor: window.chartColors.green,
+                  borderColor: window.chartColors.green,
+                  data: [
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                  ],
+                },
               ],
             },
-          ],
-        },
-        options: {
-          responsive: true,
-          title: {
-            display: true,
-            text: "Product and Revenue",
-          },
-          tooltips: {
-            mode: "index",
-            intersect: false,
-          },
-          hover: {
-            mode: "nearest",
-            intersect: true,
-          },
-          scales: {
-            xAxes: [
-              {
-                display: true,
-                scaleLabel: {
-                  display: true,
-                  labelString: "Month",
-                },
+            options: {
+              responsive: true,
+              title: {
+                display: false,
+                text: "Product and Revenue",
               },
-            ],
-            yAxes: [
-              {
-                display: true,
-                scaleLabel: {
-                  display: true,
-                  labelString: "Value",
-                },
+              tooltips: {
+                mode: "index",
+                intersect: false,
               },
-            ],
-          },
-        },
-      };
-
-      window.onload = function () {
-        var ctx = document.getElementById("canvas").getContext("2d");
-        window.myLine = new Chart(ctx, config);
-      };
-
-      document
-        .getElementById("randomizeData")
-        .addEventListener("click", function () {
-          config.data.datasets.forEach(function (dataset) {
-            dataset.data = dataset.data.map(function () {
-              return randomScalingFactor();
-            });
-          });
-
-          window.myLine.update();
-        });
-
-      var colorNames = Object.keys(window.chartColors);
-      document
-        .getElementById("addDataset")
-        .addEventListener("click", function () {
-          var colorName =
-            colorNames[config.data.datasets.length % colorNames.length];
-          var newColor = window.chartColors[colorName];
-          var newDataset = {
-            label: "Dataset " + config.data.datasets.length,
-            backgroundColor: newColor,
-            borderColor: newColor,
-            data: [],
-            fill: false,
+              hover: {
+                mode: "nearest",
+                intersect: true,
+              },
+              scales: {
+                xAxes: [
+                  {
+                    display: true,
+                    scaleLabel: {
+                      display: false,
+                      labelString: "Month",
+                    },
+                  },
+                ],
+                yAxes: [
+                  {
+                    display: true,
+                    scaleLabel: {
+                      display: false,
+                      labelString: "Value",
+                    },
+                  },
+                ],
+              },
+            },
           };
 
-          for (var index = 0; index < config.data.labels.length; ++index) {
-            newDataset.data.push(randomScalingFactor());
-          }
+          window.onload = function () {
+            var ctx = document.getElementById("canvas").getContext("2d");
+            window.myLine = new Chart(ctx, config);
+          };
 
-          config.data.datasets.push(newDataset);
-          window.myLine.update();
-        });
+          document
+            .getElementById("randomizeData")
+            .addEventListener("click", function () {
+              config.data.datasets.forEach(function (dataset) {
+                dataset.data = dataset.data.map(function () {
+                  return randomScalingFactor();
+                });
+              });
 
-      document.getElementById("addData").addEventListener("click", function () {
-        if (config.data.datasets.length > 0) {
-          var month = MONTHS[config.data.labels.length % MONTHS.length];
-          config.data.labels.push(month);
+              window.myLine.update();
+            });
 
-          config.data.datasets.forEach(function (dataset) {
-            dataset.data.push(randomScalingFactor());
-          });
+          var colorNames = Object.keys(window.chartColors);
+          document
+            .getElementById("addDataset")
+            .addEventListener("click", function () {
+              var colorName =
+                colorNames[config.data.datasets.length % colorNames.length];
+              var newColor = window.chartColors[colorName];
+              var newDataset = {
+                label: "Dataset " + config.data.datasets.length,
+                backgroundColor: newColor,
+                borderColor: newColor,
+                data: [],
+                fill: false,
+              };
 
-          window.myLine.update();
-        }
-      });
+              for (var index = 0; index < config.data.labels.length; ++index) {
+                newDataset.data.push(randomScalingFactor());
+              }
 
-      document
-        .getElementById("removeDataset")
-        .addEventListener("click", function () {
-          config.data.datasets.splice(0, 1);
-          window.myLine.update();
-        });
+              config.data.datasets.push(newDataset);
+              window.myLine.update();
+            });
 
-      document
-        .getElementById("removeData")
-        .addEventListener("click", function () {
-          config.data.labels.splice(-1, 1); // remove the label first
+          document
+            .getElementById("addData")
+            .addEventListener("click", function () {
+              if (config.data.datasets.length > 0) {
+                var month = MONTHS[config.data.labels.length % MONTHS.length];
+                config.data.labels.push(month);
 
-          config.data.datasets.forEach(function (dataset) {
-            dataset.data.pop();
-          });
+                config.data.datasets.forEach(function (dataset) {
+                  dataset.data.push(randomScalingFactor());
+                });
 
-          window.myLine.update();
-        });
-    </script>
-<!-- product and revenue graph end-->
+                window.myLine.update();
+              }
+            });
+
+          document
+            .getElementById("removeDataset")
+            .addEventListener("click", function () {
+              config.data.datasets.splice(0, 1);
+              window.myLine.update();
+            });
+
+          document
+            .getElementById("removeData")
+            .addEventListener("click", function () {
+              config.data.labels.splice(-1, 1); // remove the label first
+
+              config.data.datasets.forEach(function (dataset) {
+                dataset.data.pop();
+              });
+
+              window.myLine.update();
+            });
+        </script>
+        <!-- product and revenue graph end-->
+      </div>
+      <div class="column">
+        <h2>Column2</h2>
+      </div>
+    </div>
   </body>
 </html>
