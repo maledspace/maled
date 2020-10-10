@@ -3,6 +3,7 @@
 * {
   box-sizing: border-box;
   font-family: raleway;
+  margin: 0;
 }
 .row {
   display: flex;
