@@ -15,6 +15,13 @@
     <title>locals/profile</title>
     <script src="Chart.min.js"></script>
     <script src="utils.js"></script>
+    <!-- Map -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDx3KbGROjxgTHYEICjJReQwPtAm72EK50&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <!-- Map -->
   </head>
   <body>
     <div class="row">
@@ -26,8 +33,7 @@
             Rainbow farm, Udonthani
           </p>
         </div>
-        <p style="font-weight: 800" class="ChartHeader">Product and Revenue</p>
-        <br />
+        <p style="font-weight: 800" class="ChartHeader">Product & Revenue</p>
         <!-- product and revenue graph start-->
         <div style="width: 100%">
           <canvas id="canvas"></canvas>
@@ -218,6 +224,67 @@
             });
         </script>
         <!-- product and revenue graph end-->
+        <!-- map start -->
+        <p style="font-weight: 800" class="ChartHeader">Operating area</p>
+        <script>
+          function initMap() {
+            const bangkok = new google.maps.LatLng(13.736717, 100.523186);
+            const map = new google.maps.Map(document.getElementById("map"), {
+              center: bangkok,
+              zoom: 12,
+            });
+            const coordInfoWindow = new google.maps.InfoWindow();
+            coordInfoWindow.setContent(
+              createInfoWindowContent(bangkok, map.getZoom())
+            );
+            coordInfoWindow.setPosition(bangkok);
+            coordInfoWindow.open(map);
+            map.addListener("zoom_changed", () => {
+              coordInfoWindow.setContent(
+                createInfoWindowContent(bangkok, map.getZoom())
+              );
+              coordInfoWindow.open(map);
+            });
+          }
+          const TILE_SIZE = 256;
+
+          //   function createInfoWindowContent(latLng, zoom) {
+          //     const scale = 1 << zoom;
+          //     const worldCoordinate = project(latLng);
+          //     const pixelCoordinate = new google.maps.Point(
+          //       Math.floor(worldCoordinate.x * scale),
+          //       Math.floor(worldCoordinate.y * scale)
+          //     );
+          //     const tileCoordinate = new google.maps.Point(
+          //       Math.floor((worldCoordinate.x * scale) / TILE_SIZE),
+          //       Math.floor((worldCoordinate.y * scale) / TILE_SIZE)
+          //     );
+          //     return [
+          //       "Thailand, BKK",
+          //       "LatLng: " + latLng,
+          //       "Zoom level: " + zoom,
+          //       "World Coordinate: " + worldCoordinate,
+          //       "Pixel Coordinate: " + pixelCoordinate,
+          //       "Tile Coordinate: " + tileCoordinate,
+          //     ].join("<br>");
+          //   }
+
+          // The mapping between latitude, longitude and pixels is defined by the web
+          // mercator projection.
+          function project(latLng) {
+            let siny = Math.sin((latLng.lat() * Math.PI) / 180);
+            // Truncating to 0.9999 effectively limits latitude to 89.189. This is
+            // about a third of a tile past the edge of the world tile.
+            siny = Math.min(Math.max(siny, -0.9999), 0.9999);
+            return new google.maps.Point(
+              TILE_SIZE * (0.5 + latLng.lng() / 360),
+              TILE_SIZE *
+                (0.5 - Math.log((1 + siny) / (1 - siny)) / (4 * Math.PI))
+            );
+          }
+        </script>
+        <div id="map"></div>
+        <!-- map end -->
       </div>
       <div class="column2">
         <h2>Column2</h2>
