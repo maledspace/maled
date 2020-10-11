@@ -292,7 +292,7 @@
         <!-- nav start -->
         <nav class="site-nav">
           <ul>
-            <li><a href="#1" onclick="return false">About</a></li>
+            <li><a href="#1" onclick="return false" class="open">About</a></li>
             <li><a href="#2" onclick="return false">Pricing Section</a></li>
             <li><a href="#3" onclick="return false">Our Portfolio</a></li>
           </ul>
@@ -328,6 +328,11 @@
           $("nav a").click(function () {
             $(".navLinks").hide();
             $(this.getAttribute("href")).show();
+          });
+        </script>
+        <script>
+          $(document).ready(function () {
+            $(".open").trigger("click");
           });
         </script>
         <!-- nav end -->
