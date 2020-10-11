@@ -94,7 +94,7 @@ ul li a {
   position: relative;
   display: flex;
   color: black;
-  font-family: Lato, sans-serif;
+  font-weight: 400;
   text-decoration: none;
   transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
