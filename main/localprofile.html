@@ -15,6 +15,7 @@
     <title>locals/profile</title>
     <script src="Chart.min.js"></script>
     <script src="utils.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <!-- Map -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script
@@ -23,6 +24,7 @@
     ></script>
     <!-- Map -->
   </head>
+  <!-- body start -->
   <body>
     <div class="row">
       <div class="column1">
@@ -290,12 +292,44 @@
         <!-- nav start -->
         <nav class="site-nav">
           <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Pricing Section</a></li>
-            <li><a href="#">Our Portfolio</a></li>
+            <li><a href="#1" onclick="return false">About</a></li>
+            <li><a href="#2" onclick="return false">Pricing Section</a></li>
+            <li><a href="#3" onclick="return false">Our Portfolio</a></li>
           </ul>
-          <script src="function.js"></script>
+          <script src="navbar.js"></script>
         </nav>
+        <div id="1" class="navLinks">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+          tenetur dolor, eaque unde accusantium modi quas minus harum expedita
+          autem!
+        </div>
+        <div id="2" class="navLinks">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam
+          quam necessitatibus, quisquam rem qui hic fugit recusandae cum ipsum
+          omnis eligendi veritatis provident id accusantium maxime animi ipsa
+          quidem dicta, molestias praesentium! Aperiam, perferendis? Praesentium
+          sunt molestiae nisi itaque, similique odio accusamus dignissimos
+          obcaecati sequi perspiciatis aliquid sed voluptate quisquam.
+        </div>
+        <div id="3" class="navLinks">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non pariatur
+          rem autem a porro. Beatae fuga deleniti tempore est, iure sint ullam.
+          Molestiae adipisci autem sed illo facere eveniet natus modi minus
+          sunt, facilis dicta sit, earum officia voluptatibus similique
+          doloremque? Facere quas ad voluptate obcaecati similique id, fuga
+          minima ab. Cum modi aspernatur sunt ex explicabo? Voluptatibus maiores
+          corrupti illo, suscipit dolorum optio repudiandae odit qui quis sed
+          similique consectetur, vero, quae aliquam amet adipisci architecto?
+          Quisquam id magnam soluta facere quam, molestias laudantium, sint
+          aliquid quaerat maxime repudiandae iste dicta reprehenderit! Facilis,
+          voluptate? Fugit repudiandae saepe accusamus corrupti.
+        </div>
+        <script>
+          $("nav a").click(function () {
+            $(".navLinks").hide();
+            $(this.getAttribute("href")).show();
+          });
+        </script>
         <!-- nav end -->
       </div>
     </div>

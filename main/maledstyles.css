@@ -98,3 +98,7 @@ ul li a {
   text-decoration: none;
   transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+.navLinks {
+  display: none;
+  margin-top: 10%;
+}
