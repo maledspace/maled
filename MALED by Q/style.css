@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Century;
+}
+
+header{
+    background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(./image/1.jpg);
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+}
+
+ul{
+    float: right;
+    list-style-type: none  ;
+}
+
+ul li{
+    display: inline-block;
+
+}
+
+ul li a{
+    text-decoration: none;
+    color:white;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+    transition: 0.6s ease;
+}
+
+ul li a:hover{
+    background-color: #fff;
+    color: #000000;
+}
+
+ul li.active a{
+    background-color: #fff;
+    color: #000000;
+}
+
+
+.logo img{
+    float: left;
+    width: 100px;
+    height: auto;
+}
+
+.main{
+    max-width: 1600px;
+    margin: auto;
+}
+
+.title{
+    position: absolute; 
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.title h1{
+    color:black;
+    font-size: 100px;
+}
+
+.button {
+    position: absolute; 
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);    
+}
+
+.btn{
+    border: 1px solid #ffff;
+    padding: 10px 30px;
+    color: white;
+    text-decoration: none;
+    transition: 0.6s ease;
+
+}
+ 
+.btn:hover{
+    background-color: #fff;
+    color: #000000;
+}
+
+.ROW{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.col-2{
+    flex-wrap: 50%;
+    min-width: 300PX;
+}
+
+.col-2 image{
+    max-width: 100%;
+    padding: 50PX 0;
+}
+

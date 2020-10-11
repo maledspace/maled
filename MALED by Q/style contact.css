@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Century;
+}
+
+header{
+    background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(./image/1.jpg);
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+}
+
+ul{
+    float: right;
+    list-style-type: none  ;
+}
+
+ul li{
+    display: inline-block;
+
+}
+
+ul li a{
+    text-decoration: none;
+    color:white;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+    transition: 0.6s ease;
+}
+
+ul li a:hover{
+    background-color: #fff;
+    color: #000000;
+}
+
+ul li.active a{
+    background-color: #fff;
+    color: #000000;
+}
+
+
+.logo img{
+    float: left;
+    width: 100px;
+    height: auto;
+}
+
+.main{
+    max-width: 1600px;
+    margin: auto;
+}
+
+body{
+    margin: 0%;
+    padding: 0%;
+    text-align: center;
+    background-position: center;
+}
+
+
+
+.title{
+    position: absolute; 
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.title h1{
+    color:black;
+    font-size: 100px;
+}
+
+.title h2{
+    color:rgb(223, 219, 219);
+    font-size: 25px;
+    position: center;
+}
+
+.title h3{
+    color:rgb(223, 219, 219);
+    font-size: 25px;
+    position: center;
+}
+
+form{
+    margin-top: 500px ;
+    transition: all 4s ease-in-out;
+
+}
+
+.form-control{
+    width: 600px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid gray;
+    color: #fff;
+    font size: 18px;
+    margin-bottom: 16px;
+}
+
+input{
+    height: 45px;
+}
+
+form .submit{
+    background:#4b7e62;
+    border-color: transparent;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    height: 50px;
+    margin-top:  20px;
+    text-align: center;
+
+}
